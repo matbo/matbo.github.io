@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Use</title>
+    
+    <meta name="author" content="matbo">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">chainboot.net</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li class="active"><a href="/use.html" class="active">Use</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/screenshots.html">Screenshots</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/faq.html">FAQ</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/contents.html">Menu Contents</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/more.html">More About PXE</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>Use </h1>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <h3 id='boot_from_a_cdrom'>Boot from a cdrom</h3>
+
+<p>Download the cdrom image:</p>
+
+<ul>
+<li><a href='http://www.chainboot.net/chainboot.iso'>http://www.chainboot.net/chainboot.iso</a></li>
+</ul>
+
+<p>Burn the iso and reboot on the cd, be careful, burn as an image. You can also test it with qemu:</p>
+
+<pre><code>qemu chainboot.ipxe.iso</code></pre>
+
+<h3 id='boot_from_an_usb_key_syslinux'>Boot from an usb key (syslinux)</h3>
+
+<p><em>This example is for debian/ubuntu with a FAT partition on the key. See <a href='http://etherboot.org/wiki/syslinux'>http://etherboot.org/wiki/syslinux</a> for other methods.</em></p>
+
+<p><strong>WARNING</strong> : for the following, replace sdb1 and sdb with the values for your usb disk. If you do this on your local disk you will loose your current boot loader and even maybe your data, you&#8217;ve been warned !</p>
+
+<p>install syslinux if necessary</p>
+
+<pre><code> sudo apt-get install syslinux</code></pre>
+
+<p>mount the usb disk and copy the iso file on it.</p>
+
+<ul>
+<li><a href='http://www.chainboot.net/chainboot.iso'>http://www.chainboot.net/chainboot.iso</a></li>
+</ul>
+
+<p>create a syslinux.cfg at the root with :</p>
+
+<pre><code> DEFAULT chainboot
+ LABEL chainboot
+   LINUX memdisk
+   INITRD chainboot.iso
+   APPEND iso</code></pre>
+
+<p>copy memdisk to the usb key, the file is /usr/lib/syslinux/memdisk on debian</p>
+
+<p>umount the disk and install syslinux on the usb key</p>
+
+<pre><code>sudo umount /dev/sdb1
+sudo syslinux -s /dev/sdb1
+sudo dd if=/usr/lib/syslinux/mbr.bin of=/dev/sdb</code></pre>
+
+<h3 id='boot_from_an_usb_key_windows'>Boot from an usb key (windows)</h3>
+
+<p>download the cdrom image:</p>
+
+<ul>
+<li><a href='http://www.chainboot.net/chainboot.iso'>http://www.chainboot.net/chainboot.iso</a></li>
+</ul>
+
+<p>you will need the YUMI Multiboot USB Creator</p>
+
+<ul>
+<li><a href='http://www.pendrivelinux.com/downloads/YUMI/YUMI-0.0.4.2.exe'>http://www.pendrivelinux.com/downloads/YUMI/YUMI-0.0.4.2.exe</a></li>
+</ul>
+
+<p>when asked for the distribution to use, scroll down to &#8220;Try an Unlisted ISO&#8221; and select the chainboot.iso file you downloaded.</p>
+
+<h3 id='add_to_a_pxelinux_menu'>Add to a PXELINUX menu</h3>
+
+<p>just add this entry to your config file:</p>
+
+<pre><code>LABEL Boot from http://boot.chainboot.net
+  kernel http://boot.chainboot.net/chainboot.lkrn</code></pre>
+
+<p><em>unetbootin doesn&#8217;t work for the moment !</em></p>
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; matbo 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

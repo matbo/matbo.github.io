@@ -4,7 +4,11 @@
  <title>chainboot.net</title>
  <link href="http://www.chainboot.net/atom.xml" rel="self"/>
  <link href="http://www.chainboot.net"/>
+<<<<<<< HEAD
  <updated>2013-04-18T00:40:32+02:00</updated>
+=======
+ <updated>2012-06-11T22:49:48+02:00</updated>
+>>>>>>> b8d66057b6acab36e11d866978d177509702fdf6
  <id>http://www.chainboot.net</id>
  <author>
    <name>matbo</name>

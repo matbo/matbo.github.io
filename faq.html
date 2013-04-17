@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FAQ</title>
+    
+    <meta name="author" content="matbo">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">chainboot.net</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/screenshots.html">Screenshots</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/use.html">Use</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/contents.html">Menu Contents</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li class="active"><a href="/faq.html" class="active">FAQ</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/more.html">More About PXE</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>FAQ </h1>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <h3 id='where_are_the_big_files'>Where are the big files?</h3>
+
+<p>Not here, on the distributions official mirrors. Chainboot.net just serves you a pxelinux binary and a config file.</p>
+
+<h3 id='where_does_the_pxelinux0_file_on_this_server_come_from'>Where does the pxelinux.0 file on this server come from?</h3>
+
+<p>Copied straight from the Debian netboot installer. The config file has to be on the same directory as pxelinux.0, that&#8217;s why it is here.</p>
+
+<p>Debian is just where the bootloader binary comes from, linux is NOT booted from Chainboot.</p>
+
+<p>This file</p>
+
+<ul>
+<li><a href='http://boot.chainboot.net/pxelinux.0'>http://boot.chainboot.net/pxelinux.0</a></li>
+</ul>
+
+<p>is from</p>
+
+<ul>
+<li><a href='http://ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/debian-installer/i386/pxelinux.0'>http://ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/netboot/debian-installer/i386/pxelinux.0</a></li>
+</ul>
+
+<p>and it should mach the MD5 hash from</p>
+
+<ul>
+<li><a href='http://ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/MD5SUMS'>http://ftp.debian.org/debian/dists/squeeze/main/installer-i386/current/images/MD5SUMS</a></li>
+</ul>
+
+<p>Be careful, &#8220;current&#8221; changes from time to time.</p>
+
+<h3 id='what_about_security'>What about security?</h3>
+
+<p>There is no ssl authentication. But it looks like iPXE supports https.</p>
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; matbo 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+
